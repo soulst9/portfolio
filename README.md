@@ -10,7 +10,7 @@
 
 # 최근 관심 분야
 
-`마이크로 서비스`, `docker`, `함수형 프로그래밍` 등
+`마이크로 서비스`, `docker`, `함수형 프로그래밍`, flutter 등
 
 
 
@@ -103,9 +103,22 @@ const savetoWebp = (filepath, file) => {
 
 
 
-3. 그 밖의 비공개 프로젝트
-   * Flutter로 만드는 앱 개발 진행 중 ...
-   * sequilize 모듈과 비슷한 형태의 개인 라이브러리 개발 중...
+3. api gateway
+
+   1) api gate way 역할
+
+   	* 인증(Authentication), 허가(Authorization)
+   	* 라우터
+   	* 로드밸런싱
+   	* 보안/파라미터 검증
+   	* 로그 기록 
+
+   
+
+4. 그 밖의 비공개 프로젝트
+
+* Flutter로 만드는 앱 개발 진행 중 ...
+* sequilize 모듈과 비슷한 형태의 개인 라이브러리 개발 중...
 
 
 
