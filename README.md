@@ -105,7 +105,7 @@ const savetoWebp = (filepath, file) => {
 
 3. api gateway
 
-   1) api gate way 역할
+   **api gate way 역할**
 
    	* 인증(Authentication), 허가(Authorization)
    	* 라우터
