@@ -20,7 +20,7 @@
 
 [U+ 산업용직캠](http://www.uplus.co.kr/biz/m2m/mmtom/InitBzMtmmLc.hpi) 서비스 솔루션에서 웹 개발을 담당하였습니다. 
 
-솔루션은 `node.js express`, `mysql`, `socket-io`, `fcm` 등의 프레임워크 및 라이브러리가 사용되었습니다.
+솔루션은 `node.js express`, `mysql`, `socket-io`, `jwt`, `fcm`, `electron` 등의 프레임워크 및 라이브러리가 사용되었습니다.
 
 
 
