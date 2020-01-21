@@ -136,9 +136,7 @@ const savetoWebp = (filepath, file) => {
 
 
 
-contact: 010-8918-1281
 
-email: banzry@nate.com
 
 
 
