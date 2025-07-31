@@ -2,134 +2,68 @@
 
 # 자기소개
 
-**Javascript**에 매료되어 **node.js**를 통해 2014년에 웹에 입문하였고, 클라이언트 개발자에서 서버개발자로 완벽히 전향하였습니다.
-
-제 스스로 만족할 수 있는 코드를 만들기 위해 끊임없이 고민하는 개발자가 되고 싶습니다.
-
-수동적이지 않고 알아서 찾아 일하는 삶을 추구하며 동료와의 협업을 중요시합니다.
-
-함께 성장이 가능한 곳에서 꿈을 이어 가고 싶습니다.
+AI 도구를 적극 활용하는 풀스택 개발자로서, 최신 기술 트렌드를 빠르게 학습하고 실무에 적용하는 것을 즐깁니다.
+Cursor AI, Claude Code, GitHub Copilot 등의 AI 개발 도구를 통해 개발 생산성을 극대화하며, 동료들과의 협업을 통해 더 나은 결과물을 만들어내는 것에 중점을 두고 있습니다.
+지속적인 학습과 기술 적용을 통해 비즈니스 가치를 창출하고, 함께 성장할 수 있는 환경에서 꿈을 이어가고 싶습니다.
 
 # 최근 관심 분야
 
-`마이크로 서비스`, `docker`, `쿠버네티스`, `함수형 프로그래밍`, `flutter` 등
+`AI`, `claude code`, `cursor AI`, `nest.js`, `react`, `java` 등
 
 
 
-# 해왔던 일
+# Github 개인 프로젝트
 
-[U+ 산업용직캠](http://www.uplus.co.kr/biz/m2m/mmtom/InitBzMtmmLc.hpi) 서비스 솔루션에서 웹 개발을 담당하였습니다. 
+1. [지식 공유 위키 시스템](https://github.com/soulst9/DocHub)
 
-솔루션은 `node.js express`, `mysql`, `socket-io`, `jwt`, `fcm`, `electron` 등의 프레임워크 및 라이브러리가 사용되었습니다.
+AI 도구를 활용한 1주 완성 프로토타입
 
+기술 스택: Next.js 15, React 18, Express.js, MySQL, shadcn/ui, Tailwind CSS
+클라우드 & 인프라: AWS EC2, RDS (MySQL), GitHub Actions (CI/CD)
+개발 도구: Cursor AI, Taskmaster MCP
+소요시간: 12시간
 
+프로젝트 특징:
 
-# Github에서 개인 프로젝트 진행 중
+AI 협업 개발: Cursor AI의 컨텍스트 기반 코드 생성과 Taskmaster MCP를 활용하여 2주 만에 완성
+사내 지식 관리: 마크다운 기반 문서 작성, 실시간 검색, 카테고리/태그 시스템 구현
+사용자 경험: Fuse.js 퍼지 검색으로 직관적인 검색 경험 제공
+반응형 설계: 모바일부터 데스크톱까지 완벽한 반응형 UI
 
-1. [오브젝트 쿼리](https://github.com/soulst9/jsQuery)
+핵심 성과:
 
-기존에 많이 사용하던 ORM과 비슷합니다. 다만, 내부에서 RDB에 연결되어 있는 것은 아니고 완성된 쿼리의 스트링 결과만 받기 때문에 좀 더 유연하게 개발을 할 수 있습니다.
-
-아래의 예시처럼, **오브젝트 쿼리**는 미리 정의된 Keyword를 갖는 **Key**와 **Value**로 이루어져 있습니다.
-
-```
-/**
- * 조회 예시입니다.
- */
-const example1 = jsQuery.selectQuery(
-  {
-    select: ["_id", "idx", "name"],
-    from: { 
-      table: "tb_products"
-    },
-    where: {
-      _id: 1
-    },
-    groupby: [
-      "idx",
-      "name"
-    ],
-    orderby: [
-      "idx",
-      "name"
-    ]
-  }
-);
-```
-
-현재는, Mysql 쿼리로 변경하는 것에 대해서만 지원하고 있고, 모든 기능을 구현한 것은 아니고 DMS관련해서만 개발되어 있습니다.
-
-좀 더 많은 예시는 [링크](https://github.com/soulst9/jsQuery)를 참조해주세요.
-
-2. [이미지 서버](https://github.com/soulst9/image_server)
-
-이미지 서버의 개발을 고려할 때 사용자가 늘어감에 따라 기하급수적으로 늘어나는 서버용량을 고민하지 않을 수가 없습니다.
-
-On-demand 방식의 이미지 서버를 생각하여 진행한 프로젝트입니다.
-
-실시간으로 이미지를 리사이징하여 응답을 줘야 하기 때문에 속도가 중요하지 않을 수 없습니다.
-
-그래서 **sharp**모듈을 사용하였습니다. 기존 **ImageMagic**의 몇 배 빠른 속도로 작업을 해내기 때문에 시험적으로 사용해볼 수 있었
-
-고 결과는 만족스러웠습니다.
-
-```
-/*
- * sharp는 Promise를 지원하기 때문에 async/await를 사용할 수 있습니다.
- */
-
-const saveImages = async (filepath, files) => {
-  let resultAll = [];
-  for (const file of files) {
-    const result = await savetoWebp(filepath, file);
-    if (result) {
-      result.originalname = file.originalname;
-      result.originalformat = extention(file.originalname);
-      result.finalname = rename(file.originalname);
-      result.filepath = symboliclink(filepath);
-      resultAll.push(result);
-    }
-  }
-  return resultAll;
-};
-
-const savetoWebp = (filepath, file) => {
-  return sharp(file.buffer)
-    .webp({ alphaQuality: 60 })
-    .toFile(path.join(filepath, rename(file.originalname)))
-    .catch(err => {
-      console.log(err);
-    });
-};
-```
+AI 도구 활용으로 개발 속도 3배 향상
+전체 CRUD 기능과 고급 검색 기능을 1주 만에 완성
+체계적인 PRD 기반 개발로 요구사항 100% 충족
 
 
+2. [AI 매칭 서비스]
 
-3. [api gateway](https://github.com/soulst9/apiGateway)
+기술 스택: Next.js 13 (App Router), TypeScript, NestJS, Convex, Redis
+클라우드 & 인프라: AWS EC2, RDS (MySQL), GitHub Actions (CI/CD)
+프론트엔드: React 18, Tailwind CSS, Zustand
+백엔드: Node.js 18, JWT + Passport.js, Swagger/OpenAPI
 
-   분산처리 시스템에서 기본이 되는 **api gateway**를 직접 만들어 보고 싶어서 시작한 프로젝트입니다.
+프로젝트 특징:
 
-   추후 개발할 부분이 많이 남아있지만, 가볍게 운영하기에는 무리가 없을 정도로 완료된 상태입니다.
+AI 기반 매칭: 개인 선호도에 따른 그룹 자동 매칭
+실시간 데이터: Convex를 활용한 실시간 매칭 상태 업데이트
+확장 가능한 아키텍처: NestJS의 모듈 시스템으로 마이크로서비스 대응 가능
+사용자 경험: TypeScript 기반 타입 안전성과 직관적인 UI/UX
 
-   
 
-   **api gateway 역할**
+# 개발 철학
 
-   ```
-   * 인증(Authentication), 허가(Authorization)
-   * 라우터
-   * 로드밸런싱
-   * 보안/파라미터 검증
-   * 로그 기록 
-   ```
+AI와의 협업을 통한 생산성 극대화와 지속적인 기술 학습을 바탕으로, 실제 비즈니스 문제를 해결하는 서비스 개발에 집중합니다. 
+동료들과의 지식 공유를 통해 함께 성장하는 개발 문화를 추구하며, 사용자 중심의 경험을 제공하는 것을 최우선으로 생각합니다.
 
-   
+# AI 도구 활용 경험
 
-4. 그 밖의 비공개 프로젝트
+- **Cursor AI**: 컨텍스트 기반 코드 생성으로 코드 작성 시간 80% 단축
+- **Claude Code**: 터미널 기반 개발 자동화로 반복 작업 최소화  
+- **GitHub Copilot**: 실시간 코드 자동완성으로 개발 플로우 향상
 
-* Flutter로 만드는 앱 개발 진행 중 ...
-* sequilize 모듈과 비슷한 형태의 개인 라이브러리 개발 중...
-
+새로운 기술과 도구를 빠르게 습득하여 실무에 적용하고, 이를 통해 더 나은 개발 경험과 결과물을 만들어내는 것이 저의 강점입니다.
 
 
 
