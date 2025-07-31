@@ -8,7 +8,7 @@ Cursor AI, Claude Code, GitHub Copilot 등의 AI 개발 도구를 통해 개발 
 
 # 최근 관심 분야
 
-`AI`, `claude code`, `cursor AI`, `nest.js`, `react`, `java` 등
+`AI`, `claude code`, `cursor AI`, `nest.js`, `next.js`, `react`, `java` 등
 
 
 
